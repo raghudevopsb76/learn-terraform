@@ -9,11 +9,16 @@ resource "aws_instance" "instances" {
 }
 
 #resource "aws_route53_record" "frontend" {
+#  for_each = var.components
 #  zone_id = var.zone_id
-#  name    = "frontend-${var.env}"
+#  name    = "${each.value["name"]}-${var.env}"
 #  type    = "A"
 #  ttl     = 30
-#  records = [aws_instance.frontend.private_ip]
+#  records = [aws_instance.instances[each.name["name"]].private_ip]
 #}
 
+
+output "instances" {
+  value = aws_instance.instances
+}
 
