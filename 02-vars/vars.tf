@@ -16,7 +16,7 @@ output "fruits_first_fruit" {
 
 variable "fruits_with_quantity" {
   default = {
-    apple = 100
+    apple  = 100
     banana = 200
     orange = 50
   }

@@ -17,15 +17,15 @@ resource "null_resource" "sample" {
 variable "instances1" {
   default = {
     frontend = {
-      name = "frontend"
+      name          = "frontend"
       instance_type = "t3.micro"
     }
     backend = {
-      name = "backend"
+      name          = "backend"
       instance_type = "t3.micro"
     }
     mysql = {
-      name = "mysql"
+      name          = "mysql"
       instance_type = "t3.micro"
     }
   }
