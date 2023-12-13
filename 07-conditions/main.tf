@@ -16,7 +16,7 @@ variable "create_instance" {
 }
 
 resource "aws_instance" "test" {
-  count         = var.instance_type ? 1 : 0
+  count         = var.create_instance ? 1 : 0
   ami           = "ami-03265a0778a880afb"
   instance_type = var.instance_type == null ? "t3.micro" : var.instance_type
 }
